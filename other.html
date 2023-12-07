@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>lab7</title>
+    <script>
+        function generateValue() {
+            var studentSelect = document.getElementById('studentSelect');
+            var selectedStudent = studentSelect.value.toLowerCase();
+
+            var inputField = document.getElementById('inputField');
+            var outputField = document.getElementById('outputField');
+
+            var inputValue = inputField.value.toLowerCase().trim(); // Убираем пробелы в начале и конце
+
+            var result;
+
+            switch (selectedStudent) {
+                case 'черкесова':
+                    switch (inputValue) {
+                        case 'дата рождения':
+                            result = '23.12.2003';
+                            break;
+                        case 'номер группы':
+                            result = '12002103';
+                            break;
+                        default:
+                            result = 'Неизвестное значение';
+                    }
+                    break;
+
+                case 'чурилов':
+                    switch (inputValue) {
+                        case 'дата рождения':
+                            result = '17.01.2002';
+                            break;
+                        case 'номер группы':
+                            result = '12002103';
+                            break;
+                        default:
+                            result = 'Неизвестное значение';
+                    }
+                    break;
+
+                case 'яловенко':
+                    switch (inputValue) {
+                        case 'дата рождения':
+                            result = '07.11.2003';
+                            break;
+                        case 'номер группы':
+                            result = '12002103';
+                            break;
+                        default:
+                            result = 'Неизвестное значение';
+                    }
+                    break;
+
+                case 'выродов':
+                    switch (inputValue) {
+                        case 'дата рождения':
+                            result = '22.03.2003';
+                            break;
+                        case 'номер группы':
+                            result = '12002103';
+                            break;
+                        default:
+                            result = 'Неизвестное значение';
+                    }
+                    break;
+
+                case 'ахременков':
+                    switch (inputValue) {
+                        case 'дата рождения':
+                            result = '28.01.2004';
+                            break;
+                        case 'номер группы':
+                            result = '12002103';
+                            break;
+                        default:
+                            result = 'Неизвестное значение';
+                    }
+                    break;
+
+                case 'аладьина':
+                    switch (inputValue) {
+                        case 'дата рождения':
+                            result = '16.12.2003';
+                            break;
+                        case 'номер группы':
+                            result = '12002103';
+                            break;
+                        default:
+                            result = 'Неизвестное значение';
+                    }
+                    break;
+
+                default:
+                    result = 'Неизвестный студент';
+            }
+
+            outputField.textContent = result;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Лабораторная работа №7</h1>
+            <nav>
+                <ul>
+                    <li><a href="other.html">Задание №1</a></li>
+                    <li><a href="index.html">Задание №2</a></li>
+                   
+                </ul>
+            </nav>
+        </header>
+
+        <div class="form-container">
+            <p for="studentSelect">Выберите студента:</p>
+            <select id="studentSelect">
+                <option value="черкесова">Черкесова</option>
+                <option value="чурилов">Чурилов</option>
+                <option value="яловенко">Яловенко</option>
+                <option value="выродов">Выродов</option>
+                <option value="ахременков">Ахременков</option>
+                <option value="аладьина">Аладьина</option>
+                <!-- Добавьте других студентов по аналогии -->
+            </select>
+
+            <p for="inputField">Введите значение:</p>
+            <input type="text" id="inputField">
+            <button onclick="generateValue()">Найти</button>
+
+            <p>Результат: <span id="outputField"></span></p>
+        </div>
+    </div>
+</body>
+</html>

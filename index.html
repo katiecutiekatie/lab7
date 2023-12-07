@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>lab7</title>
+</head>
+
+<body>
+    <header>
+
+        <h1>Лабораторная работа №7</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="other.html">Задание №1</a></li>
+                <li><a href="index.html">Задание №2</a></li>
+
+            </ul>
+        </nav>
+    </header>
+    <form id="gcdForm">
+        <p><label for="number1">Введите первое число:</label></p>
+        <input type="number" id="number1"><br><br>
+        <p><label for="number2">Введите второе число:</label></p>
+        <input type="number" id="number2"><br><br>
+        <input type="button" value="Посчитать НОД" onclick="calculateGCD()">
+        <input type="button" value="Обновить" onclick="resetForm()">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+    function calculateGCD() {
+        var n = parseInt(document.getElementById("number1").value);
+        var m = parseInt(document.getElementById("number2").value);
+        var result = document.getElementById("result");
+
+        while (m !== 0) {
+            var temp = m;
+            m = n % m;
+            n = temp;
+        }
+
+        result.innerHTML = "Наибольший общий делитель двух данных чисел: " + n;
+    }
+
+    function resetForm() {
+        document.getElementById("gcdForm").reset();
+        document.getElementById("result").innerHTML = "";
+    }
+    </script>
+
+
+</body>
+</html>
+
